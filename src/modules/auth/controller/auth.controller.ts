@@ -66,6 +66,10 @@ export class AuthController {
     description: 'User session refreshed successfully',
     type: RefreshSessionResponse,
   })
+  @ApiHeader({
+    name: 'Authorization',
+    description: 'Bearer refresh_token',
+  })
   @ApiResponse({ status: 401, description: 'Refresh token failed' })
   @Post('/refresh-session')
   refreshSession(
